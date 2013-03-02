@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <form method="POST">
+      <table>
+	<tr>
+	  <td>Email</td>
+	  <td><input name="email"></td>
+	</tr>
+	<tr>
+	  <td>Message</td>
+	  <td><input name="message"></td>
+	</tr>
+	<tr>
+	  <td><input type="submit" value="Submit"></td>
+	</tr>	
+      </table>
+    </form>
+    <hr>
+    <h2>Previous Entries</h2>
+    <table>
+      <th>Email Id</th>
+      <th>Message</th>
+      <th>Time</th>
+      {% for user in users %}
+      <tr>
+	<td>{{user.email}}</td>
+	<td>{{user.msg}}</td>
+	<td>{{user.time.strftime("%c")}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
